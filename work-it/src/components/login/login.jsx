@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { authService } from "service/fbase";
+import { authService, firebaseInstance } from "service/fbase";
 import styles from "./login.module.css";
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineGoogle, AiFillGithub } from "react-icons/ai";
 import firebase from "firebase";
 
-const Login = ({ authService }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
+  const [error, setError] = useState("");
 
   const onChange = (event) => {
     const {
@@ -37,14 +38,22 @@ const Login = ({ authService }) => {
       }
       console.log(data);
     } catch (error) {
-      console.log(error);
+      setError(error.message);
     }
   };
 
-  const onLogin = (event) => {
-    authService //
-      .login(event.currentTarget.textContent) //
-      .then(console.log);
+  const onSocialLogin = async (event) => {
+    const {
+      target: { name },
+    } = event;
+    let provider;
+    if (name === "Google") {
+      provider = new firebaseInstance.auth.GoogleAuthProvider();
+    } else if (name === "Github") {
+      provider = new firebaseInstance.auth.GithubAuthProvider();
+    }
+    const data = await authService.signInWithPopup(provider);
+    console.log(data);
   };
 
   return (
@@ -57,6 +66,7 @@ const Login = ({ authService }) => {
         이번 달, 당신이 일한 시간은?
       </h1>
       <p className={styles.intro}>먼저, 로그인이 필요해요 :)</p>
+      {error}
       <form className={styles.form} onSubmit={onSubmit} action="">
         <input
           className={styles.email}
@@ -84,10 +94,10 @@ const Login = ({ authService }) => {
           <button className={styles.regiser__btn}> 회원가입 </button>하기{" "}
         </p>
         <p className={styles.easy__login}>간편 로그인하기</p>
-        <button className={styles.google} onClick={onLogin}>
+        <button name="Google" className={styles.google} onClick={onSocialLogin}>
           <AiOutlineGoogle className={styles.google__icon} /> Google
         </button>
-        <button className={styles.github} onClick={onLogin}>
+        <button name="Github" className={styles.github} onClick={onSocialLogin}>
           <AiFillGithub className={styles.github__icon} /> Github
         </button>
       </form>
