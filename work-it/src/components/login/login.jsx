@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import firebase from "firebase";
 import { authService, firebaseInstance } from "service/fbase";
 import styles from "./login.module.css";
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineGoogle, AiFillGithub } from "react-icons/ai";
-import firebase from "firebase";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
+  const history = useHistory();
 
   const onChange = (event) => {
     const {
@@ -58,7 +60,7 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
-      <button className={styles.close}>
+      <button onClick={() => history.push("/main")} className={styles.close}>
         <FaTimes className={styles.x} />
       </button>
       <h1 className={styles.title}>
