@@ -93,7 +93,13 @@ const Login = () => {
         ></input>
         <p className={styles.register}>
           혹시 회원이 아니신가요?
-          <button className={styles.regiser__btn}> 회원가입 </button>하기{" "}
+          <button
+            onClick={() => history.push("/register")}
+            className={styles.regiser__btn}
+          >
+            회원가입{" "}
+          </button>
+          하기{" "}
         </p>
         <p className={styles.easy__login}>간편 로그인하기</p>
         <button name="Google" className={styles.google} onClick={onSocialLogin}>
