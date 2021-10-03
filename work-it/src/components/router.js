@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "components/login/login";
 import Main from "components/main/main";
 import Home from "./home/home";
+import Register from "./register/register";
 
 const AppRouter = ({ isLoggedIn }) => {
   return (
@@ -19,6 +20,9 @@ const AppRouter = ({ isLoggedIn }) => {
         )}
         <Route exact path="/main">
           <Main />
+        </Route>
+        <Route exact path="/register">
+          <Register />
         </Route>
       </Switch>
     </BrowserRouter>

@@ -8,6 +8,7 @@
 
 button {
   cursor: pointer;
+  padding: 0;
 }
 
 .login {

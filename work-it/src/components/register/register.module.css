@@ -1,0 +1,98 @@
+@value keyColor, darkGrey, googleColor, underlineColor from "../../common/color.css";
+
+.register {
+  background-color: white;
+  border-radius: 20px;
+  width: 25em;
+  height: 35em;
+}
+
+.close {
+  transform: translateX(26em) translateY(1.5em);
+}
+
+.x {
+  width: 2em;
+  height: 2em;
+  color: darkGrey;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+
+.intro {
+  margin-left: 1.5em;
+  margin-top: 0.4em;
+  margin-bottom: 2em;
+}
+
+.image {
+  margin: 0 auto;
+  margin-bottom: 3.5em;
+  background-color: lightgray;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image__btn {
+  border-radius: 50%;
+  position: absolute;
+  top: 65px;
+  right: -5px;
+  background-color: white;
+}
+
+.image__plus {
+  color: keyColor;
+  width: 35px;
+  height: 35px;
+}
+
+.email,
+.password {
+  margin-left: 2.4em;
+  border-bottom: 1px solid underlineColor;
+  width: 12.7em;
+  height: 2em;
+  margin-bottom: 0.6em;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: underlineColor;
+  text-indent: 0.2em;
+}
+
+.email__container {
+  display: flex;
+}
+
+.check__btn {
+  background-color: keyColor;
+  color: white;
+  width: 5.5em;
+  height: 2.4em;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.start {
+  margin: 0 auto;
+  background-color: keyColor;
+  color: white;
+  width: 20em;
+  height: 3em;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1em;
+}
