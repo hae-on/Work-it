@@ -9,7 +9,6 @@ import { useHistory } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
   const history = useHistory();
 
@@ -29,16 +28,9 @@ const Login = () => {
 
     try {
       let data;
-      if (newAccount) {
-        data = await firebase
-          .auth()
-          .createUserWithEmailAndPassword(email, password);
-      } else {
-        data = await firebase
-          .auth()
-          .signInWithEmailAndPassword(email, password);
-      }
+      data = await firebase.auth().signInWithEmailAndPassword(email, password);
       console.log(data);
+      history.push("/home");
     } catch (error) {
       setError(error.message);
     }
@@ -89,7 +81,7 @@ const Login = () => {
         <input
           className={styles.start}
           type="submit"
-          value={newAccount ? "계정 만들기" : "시작하기"}
+          value={"시작하기"}
         ></input>
         <p className={styles.register}>
           혹시 회원이 아니신가요?
@@ -97,9 +89,9 @@ const Login = () => {
             onClick={() => history.push("/register")}
             className={styles.regiser__btn}
           >
-            회원가입{" "}
+            회원가입
           </button>
-          하기{" "}
+          하기
         </p>
         <p className={styles.easy__login}>간편 로그인하기</p>
         <button name="Google" className={styles.google} onClick={onSocialLogin}>

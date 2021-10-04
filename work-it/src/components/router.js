@@ -9,16 +9,18 @@ const AppRouter = ({ isLoggedIn }) => {
   return (
     <BrowserRouter>
       <Switch>
-        {isLoggedIn ? (
-          <Route exact path="/">
-            <Home />
-          </Route>
+        {/* {isLoggedIn ? (
+         
         ) : (
-          <Route exact path="/">
-            <Login />
-          </Route>
-        )}
-        <Route exact path="/main">
+       
+        )} */}
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/">
           <Main />
         </Route>
         <Route exact path="/register">
