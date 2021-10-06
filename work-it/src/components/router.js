@@ -5,15 +5,10 @@ import Main from "components/main/main";
 import Home from "./home/home";
 import Register from "./register/register";
 
-const AppRouter = ({ isLoggedIn }) => {
+const AppRouter = () => {
   return (
     <BrowserRouter>
       <Switch>
-        {/* {isLoggedIn ? (
-         
-        ) : (
-       
-        )} */}
         <Route exact path="/home">
           <Home />
         </Route>

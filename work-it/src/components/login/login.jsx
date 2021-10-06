@@ -52,7 +52,7 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
-      <button onClick={() => history.push("/main")} className={styles.close}>
+      <button onClick={() => history.push("/")} className={styles.close}>
         <FaTimes className={styles.x} />
       </button>
       <h1 className={styles.title}>
