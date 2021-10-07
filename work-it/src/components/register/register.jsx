@@ -5,6 +5,9 @@ import { useHistory } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
 
+// import { v4 as uuidv4 } from "uuid";
+// import { storageService } from "service/fbase";
+
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,6 +55,12 @@ const Register = () => {
       ) {
         setError("비밀번호를 6글자 이상 입력해주세요.");
       }
+
+      // firebase storage 이미지 파일 저장
+      // env에서 storageBucket을 못 읽는 오류
+      // const fileRef = storageService.ref().child(`${uuidv4()}`);
+      // const response = fileRef.putString(attachment, "data_url");
+      // console.log(response);
     }
 
     // 비밀번호 불일치

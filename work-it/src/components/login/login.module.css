@@ -59,6 +59,14 @@ button {
   text-indent: 0.2em;
 }
 
+.error {
+  margin-left: 2.3em;
+  color: red;
+  font-size: 0.9rem;
+  transition: all 300ms ease-in;
+  margin-bottom: 0.5em;
+}
+
 .start {
   margin: 0 auto;
   background-color: keyColor;

@@ -60,7 +60,6 @@ const Login = () => {
         이번 달, 당신이 일한 시간은?
       </h1>
       <p className={styles.intro}>먼저, 로그인이 필요해요 :)</p>
-      {error}
       <form className={styles.form} onSubmit={onSubmit} action="">
         <input
           className={styles.email}
@@ -78,6 +77,9 @@ const Login = () => {
           value={password}
           onChange={onChange}
         />
+        <div className={styles.error}>
+          {error ? "이메일 또는 비밀번호를 다시 입력해주세요" : ""}
+        </div>
         <input
           className={styles.start}
           type="submit"
