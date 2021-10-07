@@ -34,30 +34,6 @@
   margin-bottom: 2em;
 }
 
-.image {
-  margin: 0 auto;
-  margin-bottom: 3.5em;
-  background-color: lightgray;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: relative;
-}
-
-.image__btn {
-  border-radius: 50%;
-  position: absolute;
-  top: 65px;
-  right: -5px;
-  background-color: white;
-}
-
-.image__plus {
-  color: keyColor;
-  width: 35px;
-  height: 35px;
-}
-
 .email,
 .password {
   margin-left: 2.4em;
@@ -116,4 +92,32 @@
   font-size: 1.2rem;
   color: underlineColor;
   text-indent: 0.2em;
+}
+
+.image {
+  margin: 0 auto;
+  margin-bottom: 3.5em;
+  background-color: lightgray;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image__input {
+  display: none;
+}
+
+.image__btn {
+  border-radius: 50%;
+  position: absolute;
+  top: 65px;
+  right: -5px;
+  background-color: white;
+}
+
+.image__plus {
+  color: keyColor;
+  width: 35px;
+  height: 35px;
 }

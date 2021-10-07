@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./register.module.css";
 import firebase from "firebase";
 import { useHistory } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
 
-const Register = (props) => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [error, setError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [attachment, setAttachment] = useState("");
   const history = useHistory();
+  const inputRef = useRef();
 
   const onChange = (event) => {
     const {
@@ -28,6 +30,7 @@ const Register = (props) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
     // 이메일 중복 확인
     try {
       let data;
@@ -38,6 +41,7 @@ const Register = (props) => {
       console.log(data);
     } catch (error) {
       setError(error.message);
+      // 오류 메세지 출력
       if (
         error.message ===
         "The email address is already in use by another account."
@@ -56,6 +60,24 @@ const Register = (props) => {
     }
   };
 
+  const onClick = () => {
+    inputRef.current.click();
+  };
+
+  const onPhotoChange = (event) => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = (finishedEvent) => {
+      console.log(finishedEvent);
+      const {
+        currentTarget: { result },
+      } = finishedEvent;
+      setAttachment(result);
+    };
+    reader.readAsDataURL(file);
+  };
+
   return (
     <section className={styles.register}>
       <button onClick={() => history.push("/login")} className={styles.close}>
@@ -66,7 +88,18 @@ const Register = (props) => {
         회원가입을 통해 Work it을 이용할 수 있어요 :)
       </p>
       <div className={styles.image}>
-        <button className={styles.image__btn}>
+        {attachment && (
+          <img src={attachment} alt="profile_img" className={styles.image} />
+        )}
+        <input
+          className={styles.image__input}
+          ref={inputRef}
+          type="file"
+          accept="image/*"
+          name="profile_img"
+          onChange={onPhotoChange}
+        />
+        <button className={styles.image__btn} onClick={onClick}>
           <AiFillPlusCircle className={styles.image__plus} />
         </button>
       </div>
@@ -106,4 +139,5 @@ const Register = (props) => {
     </section>
   );
 };
+
 export default Register;
