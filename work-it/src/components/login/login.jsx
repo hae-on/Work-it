@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import firebase from "firebase";
 import { authService, firebaseInstance } from "service/fbase";
 import styles from "./login.module.css";
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineGoogle, AiFillGithub } from "react-icons/ai";
-import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -48,6 +48,11 @@ const Login = () => {
     }
     const data = await authService.signInWithPopup(provider);
     console.log(data);
+
+    // 로그인 성공시 페이지 이동
+    if (data) {
+      history.push("/home");
+    }
   };
 
   return (

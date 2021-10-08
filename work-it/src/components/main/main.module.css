@@ -1,0 +1,19 @@
+@value keyColor, darkGrey from "../../common/color.css";
+
+.main {
+  margin-top: 16em;
+}
+
+/* .intro {
+  color: darkGrey;
+} */
+
+.start {
+  background-color: keyColor;
+  color: white;
+  font-size: 1.7rem;
+  width: 20em;
+  height: 2em;
+  border-radius: 6px;
+  margin-top: 10px;
+}
