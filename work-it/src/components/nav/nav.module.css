@@ -1,0 +1,21 @@
+.container {
+  background: lightgray;
+  height: 80px;
+  width: 100%;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 11em;
+  height: 9em;
+  transform: translateY(-45px);
+}
+
+.logout {
+  margin-right: 2em;
+}
