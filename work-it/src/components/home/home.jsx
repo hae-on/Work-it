@@ -1,3 +1,4 @@
+import Input from "components/input_form/input";
 import Nav from "components/nav/nav";
 import React from "react";
 
@@ -8,7 +9,7 @@ const Home = (props) => {
         <Nav />
       </div>
       <div>
-        <h1>Home</h1>
+        <Input />
       </div>
     </>
   );
