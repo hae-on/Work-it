@@ -1,17 +1,41 @@
 import React from "react";
+import Calendar from "design/datePicker";
+import styles from "./input.module.css";
+import SelectColors from "design/selectColors";
+import ColorBox from "design/colorBox";
+import { ColorProvider } from "design/colorContext";
 
-const Input = (props) => {
+const Input = () => {
   return (
-    <>
+    <div className={styles.container}>
       <h2>일을 입력해보세요</h2>
-      <p>
-        제목: <input></input>
-      </p>
-      <p>날짜:</p>
-      <p>계산:</p>
-      <p>총 금액: </p>
-      <p>색상:</p>
-    </>
+      <form className={styles.form}>
+        <div className={styles.content}>
+          <p className={styles.title}>
+            <span for="start">제목: </span>
+            <input></input>
+          </p>
+          <div className={styles.calendar}>
+            <span>날짜: </span>
+            <Calendar />
+            <span>~</span>
+            <Calendar />
+          </div>
+          <p>
+            계산:
+            <div className={styles.calculation}>gh</div>
+          </p>
+          <p>총 금액:</p>
+          <p>색상:</p>
+          <ColorProvider>
+            <div>
+              <SelectColors />
+              <ColorBox />
+            </div>
+          </ColorProvider>
+        </div>
+      </form>
+    </div>
   );
 };
 

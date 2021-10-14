@@ -1,16 +1,18 @@
-import Input from "components/input_form/input";
+// import Input from "components/input_form/input";
 import Nav from "components/nav/nav";
-import React from "react";
+import React, { useState } from "react";
+// import DatePicker from "react-datepicker";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <>
       <div>
         <Nav />
       </div>
-      <div>
+      <button> he</button>
+      {/* <div>
         <Input />
-      </div>
+      </div> */}
     </>
   );
 };
