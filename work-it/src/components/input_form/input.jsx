@@ -26,13 +26,15 @@ const Input = () => {
             <div className={styles.calculation}>gh</div>
           </p>
           <p>총 금액:</p>
-          <p>색상:</p>
-          <ColorProvider>
-            <div>
-              <SelectColors />
-              <ColorBox />
+          <div className={styles.colors}>
+            <p>색상:</p>
+            <div className={styles.a}>
+              <ColorProvider>
+                <SelectColors />
+                {/* <ColorBox /> */}
+              </ColorProvider>
             </div>
-          </ColorProvider>
+          </div>
         </div>
       </form>
     </div>
