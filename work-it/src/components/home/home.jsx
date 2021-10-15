@@ -1,19 +1,21 @@
-// import Input from "components/input_form/input";
 import Nav from "components/nav/nav";
-import React, { useState } from "react";
-// import DatePicker from "react-datepicker";
+import React from "react";
+import styles from "./home.module.css";
+import ColorBox from "../colorBox/colorBox";
+import { ColorProvider } from "components/colorBox/colorContext";
+import Editor from "components/editor/editor";
 
 const Home = () => {
   return (
-    <>
-      <div>
-        <Nav />
+    <section className={styles.home}>
+      <Nav />
+      <div className={styles.container}>
+        <Editor />
+        {/* <ColorProvider> */}
+        <ColorBox />
+        {/* </ColorProvider> */}
       </div>
-      <button> he</button>
-      {/* <div>
-        <Input />
-      </div> */}
-    </>
+    </section>
   );
 };
 

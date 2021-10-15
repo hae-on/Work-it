@@ -1,0 +1,64 @@
+@value keyColor, lightGrey from "../../common/color.css";
+
+span,
+p {
+  margin-right: 1em;
+}
+
+input {
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.editor {
+  flex-basis: 50%;
+  background-color: pink;
+}
+
+.form {
+  width: 30em;
+  height: 25em;
+  border-radius: 6px;
+}
+
+.content {
+  font-size: 1.1rem;
+  margin-left: 1.5em;
+  padding-top: 0.1em;
+}
+
+.main__title {
+  margin-left: 1em;
+}
+
+.title__input {
+  border-radius: 4px;
+  width: 10em;
+  height: 2em;
+  padding-left: 0.5em;
+}
+
+.title__input:focus {
+  border: 1px solid keyColor;
+}
+
+.calendar {
+  display: flex;
+}
+
+.calculation {
+  display: inline-block;
+  background-color: lightGrey;
+  border-radius: 4px;
+  width: 20em;
+  height: 5em;
+  margin-left: 1em;
+}
+
+.colors {
+  display: flex;
+}
+
+.color__box {
+  margin-top: 1em;
+}

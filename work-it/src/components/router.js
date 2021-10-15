@@ -4,7 +4,6 @@ import Login from "components/login/login";
 import Main from "components/main/main";
 import Home from "./home/home";
 import Register from "./register/register";
-import Input from "./input_form/input";
 
 const AppRouter = () => {
   return (
@@ -21,9 +20,6 @@ const AppRouter = () => {
         </Route>
         <Route exact path="/register">
           <Register />
-        </Route>
-        <Route exact path="/input">
-          <Input />
         </Route>
       </Switch>
     </BrowserRouter>
