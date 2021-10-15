@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 import { ColorConsumer } from "./colorContext";
 import styles from "./colorBox.module.css";
+import Box from "box/box";
 
-const ColorBox = () => {
-  const [boxs, setBoxs] = useState([
-    {
-      id: "1",
-      title: "파리바게트",
-      date: "2021-10-15",
-      color: "red",
-      worktime: "155시간",
-      sum: "400,000원",
-    },
-  ]);
+const ColorBox = ({ boxes }) => {
   return (
     <section className={styles.colorbox}>
-      <h1>box</h1>
-      <ColorConsumer>
+      {boxes.map((box) => (
+        <Box box={box} />
+      ))}
+      {/* <ColorConsumer>
         {({ state }) => (
           <>
             <div
@@ -33,7 +26,7 @@ const ColorBox = () => {
             />
           </>
         )}
-      </ColorConsumer>
+      </ColorConsumer> */}
     </section>
   );
 };

@@ -4,12 +4,14 @@ import styles from "./editor.module.css";
 import SelectColors from "components/colorBox/selectColors";
 import ColorBox from "../colorBox/colorBox";
 import { ColorProvider } from "components/colorBox/colorContext";
+import BoxEditForm from "box_edit_form/box_edit_form";
+import { FaBoxes } from "react-icons/fa";
 
-const Editor = () => {
+const Editor = ({ boxes }) => {
   return (
     <section className={styles.editor}>
       <h2 className={styles.main__title}>일을 입력해보세요</h2>
-      <div className={styles.content}>
+      {/* <div className={styles.content}>
         <p className={styles.title}>
           <span for="start">제목: </span>
           <input
@@ -33,11 +35,15 @@ const Editor = () => {
           <div className={styles.color__box}>
             <ColorProvider>
               <SelectColors />
-              {/* <ColorBox /> */}
+              <ColorBox /> 
             </ColorProvider>
           </div>
         </div>
-      </div>
+      </div> */}
+      {boxes.map((box) => (
+        <BoxEditForm box={box} />
+      ))}
+
       <div className={styles.btn}>
         <button className={styles.cancel}>취소</button>
         <button className={styles.registration}>입력</button>
