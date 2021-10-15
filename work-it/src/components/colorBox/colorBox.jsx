@@ -16,7 +16,7 @@ const ColorBox = () => {
   return (
     <section className={styles.colorbox}>
       <h1>box</h1>
-      {/* <ColorConsumer>
+      <ColorConsumer>
         {({ state }) => (
           <>
             <div
@@ -33,7 +33,7 @@ const ColorBox = () => {
             />
           </>
         )}
-      </ColorConsumer> */}
+      </ColorConsumer>
     </section>
   );
 };

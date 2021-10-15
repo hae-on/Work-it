@@ -11,9 +11,9 @@ const Home = () => {
       <Nav />
       <div className={styles.container}>
         <Editor />
-        {/* <ColorProvider> */}
-        <ColorBox />
-        {/* </ColorProvider> */}
+        <ColorProvider>
+          <ColorBox />
+        </ColorProvider>
       </div>
     </section>
   );
