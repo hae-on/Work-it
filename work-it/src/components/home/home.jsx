@@ -2,7 +2,6 @@ import Nav from "components/nav/nav";
 import React, { useState } from "react";
 import styles from "./home.module.css";
 import ColorBox from "../colorBox/colorBox";
-import { ColorProvider } from "components/colorBox/colorContext";
 import Editor from "components/editor/editor";
 
 const Home = () => {
@@ -29,9 +28,7 @@ const Home = () => {
       <Nav />
       <div className={styles.container}>
         <Editor boxes={boxes} />
-        <ColorProvider>
-          <ColorBox boxes={boxes} />
-        </ColorProvider>
+        <ColorBox boxes={boxes} />
       </div>
     </section>
   );
