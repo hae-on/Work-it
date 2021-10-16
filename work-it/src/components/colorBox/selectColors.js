@@ -1,7 +1,6 @@
 import React from "react";
 import { ColorConsumer } from "./colorContext";
 
-// const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 const colors = [
   "#FF98A5",
   "#FFDCB0",

@@ -16,11 +16,11 @@ const Home = () => {
     },
     {
       id: "2",
-      title: "파리바게트",
-      date: "2021-10-15",
-      color: "red",
-      worktime: "155시간",
-      sum: "400,000원",
+      title: "한솥도시락",
+      date: "2021-11-15",
+      color: "blue",
+      worktime: "130시간",
+      sum: "200,000원",
     },
   ]);
   return (

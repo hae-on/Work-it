@@ -1,19 +1,31 @@
 @value keyColor, lightGrey, hoverKeyColor, hoverCancelColor from "../../common/color.css";
 
+input {
+  margin-left: 1em;
+}
+
+.category {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
 .content {
   font-size: 1.1rem;
   margin-left: 1.5em;
   padding-top: 0.1em;
 }
 
-.title__input {
+.title__input,
+.date {
   border-radius: 4px;
   width: 10em;
   height: 2em;
   padding-left: 0.5em;
+  margin-left: 0.4em;
 }
 
-.title__input:focus {
+.title__input:focus,
+.date:hover {
   border: 1px solid keyColor;
 }
 
@@ -30,12 +42,18 @@
   margin-left: 1em;
 }
 
+.calculation__input {
+  display: flex;
+  width: 1em;
+}
+
 .colors {
   display: flex;
 }
 
 .color__box {
   margin-top: 1em;
+  margin-left: 1em;
 }
 
 .btn {

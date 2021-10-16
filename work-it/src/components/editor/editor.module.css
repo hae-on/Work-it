@@ -1,10 +1,5 @@
 @value keyColor, lightGrey, hoverKeyColor, hoverCancelColor from "../../common/color.css";
 
-span,
-p {
-  margin-right: 1em;
-}
-
 input {
   font-size: 1.1rem;
   outline: none;
