@@ -36,36 +36,40 @@ const BoxEditForm = ({ box }) => {
           <input className={styles.date} value={date}></input>
         </span>
       </div>
-      <p className={styles.category}>
-        계산:
-        <div className={styles.calculation}>
-          <div className={styles.calculation__input}>
-            <input
-              className={styles.hourly__wage}
-              placeholder="시급"
-              size="6"
-              maxlength="5"
-              onChange={onWage}
-            ></input>
-            <p>*</p>
-            <input
-              className={styles.working__hours}
-              placeholder="일한 시간"
-              size="8"
-              maxlength="5"
-              onChange={onTime}
-            ></input>
-            <p>=</p>
-            <input
-              className={styles.lump__sum}
-              placeholder="총 금액"
-              size="6"
-              maxlength="10"
-              onChange={onSum}
-            ></input>
-          </div>
+      <p className={styles.category}>계산:</p>
+      <div className={styles.calculation}>
+        <div className={styles.calculation__input}>
+          <input
+            className={styles.hourly__wage}
+            placeholder="시급"
+            size="6"
+            maxlength="5"
+            onChange={onWage}
+          ></input>
+          <p>원</p>
+          <p className={styles.multiplication}>*</p>
+          <input
+            className={styles.working__hours}
+            placeholder="일한 시간"
+            size="8"
+            maxlength="5"
+            onChange={onTime}
+          ></input>
+          <p>시간</p>
+          <button className={styles.equal}>=</button>
+          <input
+            className={styles.lump__sum}
+            placeholder="총 금액"
+            size="6"
+            maxlength="10"
+            onChange={onSum}
+          ></input>
         </div>
-      </p>
+        <p className={styles.explanation}>
+          * 2021년 기준 최저시급은 8720원입니다.
+        </p>
+      </div>
+
       <p className={styles.category}>
         총 시간:
         <input className={styles.worktime} value={worktime}></input>
