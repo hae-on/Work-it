@@ -1,4 +1,4 @@
-@value keyColor, lightGrey, hoverKeyColor, hoverCancelColor from "../../common/color.css";
+@value keyColor, lightGrey, hoverKeyColor, hoverCancelColor, Colorgrey from "../../common/color.css";
 
 input {
   margin-left: 1em;
@@ -41,26 +41,32 @@ input::placeholder {
   display: inline-block;
   background-color: lightGrey;
   border-radius: 4px;
-  width: 25em;
+  width: 27em;
   height: 10em;
   margin-left: 1em;
 }
 
 .calculation__input {
   display: flex;
-  width: 25em;
+  width: 26em;
 }
 
 .hourly__wage,
 .working__hours,
 .lump__sum {
-  background-color: hoverCancelColor;
+  background-color: Colorgrey;
   height: 30px;
   padding-left: 10px;
   border-radius: 4px;
   margin-top: 0.9em;
   margin-right: 0.3em;
   color: white;
+}
+
+.lump__sum {
+  width: 5.5em;
+  margin-left: 0.5em;
+  padding-top: 0.2em;
 }
 
 .explanation {

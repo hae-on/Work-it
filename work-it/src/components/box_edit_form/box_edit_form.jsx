@@ -5,19 +5,10 @@ import SelectColors from "components/colorBox/selectColors";
 const BoxEditForm = ({ box }) => {
   const { id, title, date, worktime, sum, color } = box;
 
-  const onWage = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget.value);
-  };
-
-  const onTime = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget.value);
-  };
-
-  const onSum = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget.value);
+  const onClick = () => {
+    const num1 = document.getElementById("number1").value;
+    const num2 = document.getElementById("number2").value;
+    document.getElementById("result").innerHTML = num1 * num2;
   };
 
   return (
@@ -44,7 +35,7 @@ const BoxEditForm = ({ box }) => {
             placeholder="시급"
             size="6"
             maxlength="5"
-            onChange={onWage}
+            id="number1"
           ></input>
           <p>원</p>
           <p className={styles.multiplication}>*</p>
@@ -53,17 +44,22 @@ const BoxEditForm = ({ box }) => {
             placeholder="일한 시간"
             size="8"
             maxlength="5"
-            onChange={onTime}
+            id="number2"
           ></input>
           <p>시간</p>
-          <button className={styles.equal}>=</button>
-          <input
+          <button className={styles.equal} onClick={onClick}>
+            =
+          </button>
+          <span
             className={styles.lump__sum}
-            placeholder="총 금액"
-            size="6"
-            maxlength="10"
-            onChange={onSum}
-          ></input>
+            type="text"
+            // placeholder="총 금액"
+            // size="6"
+            // maxlength="10"
+            // onChange={onSum}
+            id="result"
+          ></span>
+          <p>원</p>
         </div>
         <p className={styles.explanation}>
           * 2021년 기준 최저시급은 8720원입니다.
