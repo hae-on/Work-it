@@ -70,8 +70,9 @@ input::placeholder {
 }
 
 .explanation {
-  margin-left: 1em;
   font-size: 0.9rem;
+  margin-left: 1em;
+  margin-bottom: 0;
   margin-top: 0;
   color: hoverCancelColor;
 }
@@ -90,6 +91,11 @@ input::placeholder {
   height: 1.3em;
   margin-top: 0.6em;
   margin-left: 0.5em;
+}
+
+.work__time {
+  display: flex;
+  margin-left: 1em;
 }
 
 .colors {

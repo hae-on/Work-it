@@ -50,20 +50,169 @@ const BoxEditForm = ({ box }) => {
           <button className={styles.equal} onClick={onClick}>
             =
           </button>
-          <span
-            className={styles.lump__sum}
-            type="text"
-            // placeholder="총 금액"
-            // size="6"
-            // maxlength="10"
-            // onChange={onSum}
-            id="result"
-          ></span>
+          <span className={styles.lump__sum} type="text" id="result"></span>
           <p>원</p>
         </div>
         <p className={styles.explanation}>
           * 2021년 기준 최저시급은 8720원입니다.
         </p>
+        <div className={styles.work__time}>
+          <select className={styles.hours}>
+            <option value="">시</option>
+            <option value="12시">12</option>
+            <option value="1시">1</option>
+            <option value="2시">2</option>
+            <option value="3시">3</option>
+            <option value="4시">4</option>
+            <option value="5시">5</option>
+            <option value="6시">6</option>
+            <option value="7시">7</option>
+            <option value="8시">8</option>
+            <option value="9시">9</option>
+            <option value="10시">10</option>
+            <option value="11시">11</option>
+          </select>
+          <select className={styles.minutes}>
+            <option value="">분</option>
+            <option value="1분">1</option>
+            <option value="2분">2</option>
+            <option value="3분">3</option>
+            <option value="4분">4</option>
+            <option value="5분">5</option>
+            <option value="6분">6</option>
+            <option value="7분">7</option>
+            <option value="8분">8</option>
+            <option value="9분">9</option>
+            <option value="10분">10</option>
+            <option value="11분">11</option>
+            <option value="12분">2</option>
+            <option value="13분">3</option>
+            <option value="14분">4</option>
+            <option value="15분">5</option>
+            <option value="16분">6</option>
+            <option value="17분">7</option>
+            <option value="18분">8</option>
+            <option value="19분">9</option>
+            <option value="20분">10</option>
+            <option value="21분">11</option>
+            <option value="22분">2</option>
+            <option value="23분">3</option>
+            <option value="24분">4</option>
+            <option value="25분">5</option>
+            <option value="26분">6</option>
+            <option value="27분">7</option>
+            <option value="28분">8</option>
+            <option value="29분">9</option>
+            <option value="30분">10</option>
+            <option value="31분">11</option>
+            <option value="32분">2</option>
+            <option value="33분">3</option>
+            <option value="34분">4</option>
+            <option value="35분">5</option>
+            <option value="36분">6</option>
+            <option value="37분">7</option>
+            <option value="38분">8</option>
+            <option value="39분">9</option>
+            <option value="40분">10</option>
+            <option value="41분">11</option>
+            <option value="42분">2</option>
+            <option value="43분">3</option>
+            <option value="44분">4</option>
+            <option value="45분">5</option>
+            <option value="46분">6</option>
+            <option value="47분">7</option>
+            <option value="48분">8</option>
+            <option value="49분">9</option>
+            <option value="50분">10</option>
+            <option value="51분">11</option>
+            <option value="52분">2</option>
+            <option value="53분">3</option>
+            <option value="54분">4</option>
+            <option value="55분">5</option>
+            <option value="56분">6</option>
+            <option value="57분">7</option>
+            <option value="58분">8</option>
+            <option value="59분">9</option>
+          </select>
+          <p>~</p>
+          <select className={styles.hours}>
+            <option value="">시</option>
+            <option value="12시">12</option>
+            <option value="1시">1</option>
+            <option value="2시">2</option>
+            <option value="3시">3</option>
+            <option value="4시">4</option>
+            <option value="5시">5</option>
+            <option value="6시">6</option>
+            <option value="7시">7</option>
+            <option value="8시">8</option>
+            <option value="9시">9</option>
+            <option value="10시">10</option>
+            <option value="11시">11</option>
+          </select>
+          <select className={styles.minutes}>
+            <option value="">분</option>
+            <option value="1분">1</option>
+            <option value="2분">2</option>
+            <option value="3분">3</option>
+            <option value="4분">4</option>
+            <option value="5분">5</option>
+            <option value="6분">6</option>
+            <option value="7분">7</option>
+            <option value="8분">8</option>
+            <option value="9분">9</option>
+            <option value="10분">10</option>
+            <option value="11분">11</option>
+            <option value="12분">2</option>
+            <option value="13분">3</option>
+            <option value="14분">4</option>
+            <option value="15분">5</option>
+            <option value="16분">6</option>
+            <option value="17분">7</option>
+            <option value="18분">8</option>
+            <option value="19분">9</option>
+            <option value="20분">10</option>
+            <option value="21분">11</option>
+            <option value="22분">2</option>
+            <option value="23분">3</option>
+            <option value="24분">4</option>
+            <option value="25분">5</option>
+            <option value="26분">6</option>
+            <option value="27분">7</option>
+            <option value="28분">8</option>
+            <option value="29분">9</option>
+            <option value="30분">10</option>
+            <option value="31분">11</option>
+            <option value="32분">2</option>
+            <option value="33분">3</option>
+            <option value="34분">4</option>
+            <option value="35분">5</option>
+            <option value="36분">6</option>
+            <option value="37분">7</option>
+            <option value="38분">8</option>
+            <option value="39분">9</option>
+            <option value="40분">10</option>
+            <option value="41분">11</option>
+            <option value="42분">2</option>
+            <option value="43분">3</option>
+            <option value="44분">4</option>
+            <option value="45분">5</option>
+            <option value="46분">6</option>
+            <option value="47분">7</option>
+            <option value="48분">8</option>
+            <option value="49분">9</option>
+            <option value="50분">10</option>
+            <option value="51분">11</option>
+            <option value="52분">2</option>
+            <option value="53분">3</option>
+            <option value="54분">4</option>
+            <option value="55분">5</option>
+            <option value="56분">6</option>
+            <option value="57분">7</option>
+            <option value="58분">8</option>
+            <option value="59분">9</option>
+          </select>
+        </div>
       </div>
 
       <p className={styles.category}>
