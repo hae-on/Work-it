@@ -42,7 +42,7 @@ input::placeholder {
   background-color: lightGrey;
   border-radius: 4px;
   width: 27em;
-  height: 10em;
+  height: 8em;
   margin-left: 1em;
 }
 
@@ -96,6 +96,22 @@ input::placeholder {
 .work__time {
   display: flex;
   margin-left: 1em;
+}
+
+.hours,
+.minutes {
+  font-size: 1rem;
+  background-color: Colorgrey;
+  margin-right: 0.5em;
+  margin-top: 1em;
+  height: 2em;
+  width: 3em;
+  border-radius: 2px;
+}
+
+.period {
+  margin-left: 0.8em;
+  margin-right: 1em;
 }
 
 .colors {

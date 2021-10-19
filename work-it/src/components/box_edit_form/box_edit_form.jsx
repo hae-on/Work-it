@@ -134,7 +134,7 @@ const BoxEditForm = ({ box }) => {
             <option value="58분">8</option>
             <option value="59분">9</option>
           </select>
-          <p>~</p>
+          <p className={styles.period}>~</p>
           <select className={styles.hours}>
             <option value="">시</option>
             <option value="12시">12</option>
@@ -212,6 +212,9 @@ const BoxEditForm = ({ box }) => {
             <option value="58분">8</option>
             <option value="59분">9</option>
           </select>
+          <button className={styles.equal}>=</button>
+          <span className={styles.lump__sum} type="text"></span>
+          <p>시간</p>
         </div>
       </div>
 
