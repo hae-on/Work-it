@@ -5,6 +5,85 @@ import SelectColors from "components/colorBox/selectColors";
 const BoxEditForm = ({ box }) => {
   const { id, title, date, worktime, sum, color } = box;
 
+  const hours = [
+    { label: "12", value: "12" },
+    { label: "1", value: "1" },
+    { label: "2", value: "2" },
+    { label: "3", value: "3" },
+    { label: "4", value: "4" },
+    { label: "5", value: "5" },
+    { label: "5", value: "5" },
+    { label: "6", value: "6" },
+    { label: "7", value: "7" },
+    { label: "8", value: "8" },
+    { label: "9", value: "9" },
+    { label: "10", value: "10" },
+    { label: "11", value: "11" },
+  ];
+
+  const minutes = [
+    { label: "00", value: "00" },
+    { label: "01", value: "01" },
+    { label: "02", value: "02" },
+    { label: "03", value: "03" },
+    { label: "04", value: "04" },
+    { label: "05", value: "05" },
+    { label: "06", value: "06" },
+    { label: "07", value: "07" },
+    { label: "08", value: "08" },
+    { label: "09", value: "09" },
+    { label: "10", value: "10" },
+    { label: "11", value: "11" },
+    { label: "12", value: "12" },
+    { label: "13", value: "13" },
+    { label: "14", value: "14" },
+    { label: "15", value: "15" },
+    { label: "16", value: "16" },
+    { label: "17", value: "17" },
+    { label: "18", value: "18" },
+    { label: "19", value: "19" },
+    { label: "20", value: "20" },
+    { label: "21", value: "21" },
+    { label: "22", value: "22" },
+    { label: "23", value: "23" },
+    { label: "24", value: "24" },
+    { label: "25", value: "25" },
+    { label: "26", value: "26" },
+    { label: "27", value: "27" },
+    { label: "28", value: "28" },
+    { label: "29", value: "29" },
+    { label: "30", value: "30" },
+    { label: "31", value: "31" },
+    { label: "32", value: "32" },
+    { label: "33", value: "33" },
+    { label: "34", value: "34" },
+    { label: "35", value: "35" },
+    { label: "36", value: "36" },
+    { label: "37", value: "37" },
+    { label: "38", value: "38" },
+    { label: "39", value: "39" },
+    { label: "40", value: "40" },
+    { label: "41", value: "41" },
+    { label: "42", value: "42" },
+    { label: "43", value: "43" },
+    { label: "44", value: "44" },
+    { label: "45", value: "45" },
+    { label: "46", value: "46" },
+    { label: "47", value: "47" },
+    { label: "48", value: "48" },
+    { label: "49", value: "49" },
+    { label: "50", value: "50" },
+    { label: "51", value: "51" },
+    { label: "52", value: "52" },
+    { label: "53", value: "53" },
+    { label: "54", value: "54" },
+    { label: "55", value: "55" },
+    { label: "56", value: "56" },
+    { label: "57", value: "57" },
+    { label: "58", value: "58" },
+    { label: "59", value: "59" },
+  ];
+
   const onClick = () => {
     const num1 = document.getElementById("number1").value;
     const num2 = document.getElementById("number2").value;
@@ -58,159 +137,25 @@ const BoxEditForm = ({ box }) => {
         </p>
         <div className={styles.work__time}>
           <select className={styles.hours}>
-            <option value="">시</option>
-            <option value="12시">12</option>
-            <option value="1시">1</option>
-            <option value="2시">2</option>
-            <option value="3시">3</option>
-            <option value="4시">4</option>
-            <option value="5시">5</option>
-            <option value="6시">6</option>
-            <option value="7시">7</option>
-            <option value="8시">8</option>
-            <option value="9시">9</option>
-            <option value="10시">10</option>
-            <option value="11시">11</option>
+            {hours.map((hour) => (
+              <option value={hour.value}>{hour.label}</option>
+            ))}
           </select>
           <select className={styles.minutes}>
-            <option value="">분</option>
-            <option value="1분">1</option>
-            <option value="2분">2</option>
-            <option value="3분">3</option>
-            <option value="4분">4</option>
-            <option value="5분">5</option>
-            <option value="6분">6</option>
-            <option value="7분">7</option>
-            <option value="8분">8</option>
-            <option value="9분">9</option>
-            <option value="10분">10</option>
-            <option value="11분">11</option>
-            <option value="12분">2</option>
-            <option value="13분">3</option>
-            <option value="14분">4</option>
-            <option value="15분">5</option>
-            <option value="16분">6</option>
-            <option value="17분">7</option>
-            <option value="18분">8</option>
-            <option value="19분">9</option>
-            <option value="20분">10</option>
-            <option value="21분">11</option>
-            <option value="22분">2</option>
-            <option value="23분">3</option>
-            <option value="24분">4</option>
-            <option value="25분">5</option>
-            <option value="26분">6</option>
-            <option value="27분">7</option>
-            <option value="28분">8</option>
-            <option value="29분">9</option>
-            <option value="30분">10</option>
-            <option value="31분">11</option>
-            <option value="32분">2</option>
-            <option value="33분">3</option>
-            <option value="34분">4</option>
-            <option value="35분">5</option>
-            <option value="36분">6</option>
-            <option value="37분">7</option>
-            <option value="38분">8</option>
-            <option value="39분">9</option>
-            <option value="40분">10</option>
-            <option value="41분">11</option>
-            <option value="42분">2</option>
-            <option value="43분">3</option>
-            <option value="44분">4</option>
-            <option value="45분">5</option>
-            <option value="46분">6</option>
-            <option value="47분">7</option>
-            <option value="48분">8</option>
-            <option value="49분">9</option>
-            <option value="50분">10</option>
-            <option value="51분">11</option>
-            <option value="52분">2</option>
-            <option value="53분">3</option>
-            <option value="54분">4</option>
-            <option value="55분">5</option>
-            <option value="56분">6</option>
-            <option value="57분">7</option>
-            <option value="58분">8</option>
-            <option value="59분">9</option>
+            {minutes.map((minute) => (
+              <option value={minute.value}>{minute.label}</option>
+            ))}
           </select>
           <p className={styles.period}>~</p>
           <select className={styles.hours}>
-            <option value="">시</option>
-            <option value="12시">12</option>
-            <option value="1시">1</option>
-            <option value="2시">2</option>
-            <option value="3시">3</option>
-            <option value="4시">4</option>
-            <option value="5시">5</option>
-            <option value="6시">6</option>
-            <option value="7시">7</option>
-            <option value="8시">8</option>
-            <option value="9시">9</option>
-            <option value="10시">10</option>
-            <option value="11시">11</option>
+            {hours.map((hour) => (
+              <option value={hour.value}>{hour.label}</option>
+            ))}
           </select>
           <select className={styles.minutes}>
-            <option value="">분</option>
-            <option value="1분">1</option>
-            <option value="2분">2</option>
-            <option value="3분">3</option>
-            <option value="4분">4</option>
-            <option value="5분">5</option>
-            <option value="6분">6</option>
-            <option value="7분">7</option>
-            <option value="8분">8</option>
-            <option value="9분">9</option>
-            <option value="10분">10</option>
-            <option value="11분">11</option>
-            <option value="12분">2</option>
-            <option value="13분">3</option>
-            <option value="14분">4</option>
-            <option value="15분">5</option>
-            <option value="16분">6</option>
-            <option value="17분">7</option>
-            <option value="18분">8</option>
-            <option value="19분">9</option>
-            <option value="20분">10</option>
-            <option value="21분">11</option>
-            <option value="22분">2</option>
-            <option value="23분">3</option>
-            <option value="24분">4</option>
-            <option value="25분">5</option>
-            <option value="26분">6</option>
-            <option value="27분">7</option>
-            <option value="28분">8</option>
-            <option value="29분">9</option>
-            <option value="30분">10</option>
-            <option value="31분">11</option>
-            <option value="32분">2</option>
-            <option value="33분">3</option>
-            <option value="34분">4</option>
-            <option value="35분">5</option>
-            <option value="36분">6</option>
-            <option value="37분">7</option>
-            <option value="38분">8</option>
-            <option value="39분">9</option>
-            <option value="40분">10</option>
-            <option value="41분">11</option>
-            <option value="42분">2</option>
-            <option value="43분">3</option>
-            <option value="44분">4</option>
-            <option value="45분">5</option>
-            <option value="46분">6</option>
-            <option value="47분">7</option>
-            <option value="48분">8</option>
-            <option value="49분">9</option>
-            <option value="50분">10</option>
-            <option value="51분">11</option>
-            <option value="52분">2</option>
-            <option value="53분">3</option>
-            <option value="54분">4</option>
-            <option value="55분">5</option>
-            <option value="56분">6</option>
-            <option value="57분">7</option>
-            <option value="58분">8</option>
-            <option value="59분">9</option>
+            {minutes.map((minute) => (
+              <option value={minute.value}>{minute.label}</option>
+            ))}
           </select>
           <button className={styles.equal}>=</button>
           <span className={styles.lump__sum} type="text"></span>
