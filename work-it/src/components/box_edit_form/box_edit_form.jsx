@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./box_edit_form.module.css";
 import SelectColors from "components/colorBox/selectColors";
 
@@ -6,6 +6,7 @@ const BoxEditForm = ({ box }) => {
   const { id, title, date, worktime, sum, color } = box;
 
   const hours = [
+    { label: "시작 시간", value: "시작 시간" },
     { label: "12", value: "12" },
     { label: "1", value: "1" },
     { label: "2", value: "2" },
@@ -22,6 +23,7 @@ const BoxEditForm = ({ box }) => {
   ];
 
   const minutes = [
+    { label: "시작 분", value: "시작 분" },
     { label: "00", value: "00" },
     { label: "01", value: "01" },
     { label: "02", value: "02" },
@@ -90,11 +92,20 @@ const BoxEditForm = ({ box }) => {
     document.getElementById("result").innerHTML = num1 * num2;
   };
 
-  const handleHours = (event) => {
-    console.log(event.target.value);
+  const [startHour, setStartHour] = useState("12");
+  const [startMin, setStartMin] = useState("00");
+
+  const handleStartHours = (event) => {
+    setStartHour(event.target.value);
   };
 
-  const handleTime = (e) => {};
+  const handleStartMin = (event) => {
+    setStartMin(event.target.value);
+  };
+
+  const handleTime = (e) => {
+    console.log(startHour, startMin);
+  };
 
   return (
     <div className={styles.content}>
@@ -142,12 +153,12 @@ const BoxEditForm = ({ box }) => {
           * 2021년 기준 최저시급은 8720원입니다.
         </p>
         <div className={styles.work__time}>
-          <select className={styles.hours} onChange={handleHours}>
+          <select className={styles.hours} onChange={handleStartHours}>
             {hours.map((hour) => (
               <option value={hour.value}>{hour.label}</option>
             ))}
           </select>
-          <select className={styles.minutes}>
+          <select className={styles.minutes} onChange={handleStartMin}>
             {minutes.map((minute) => (
               <option value={minute.value}>{minute.label}</option>
             ))}
