@@ -90,6 +90,12 @@ const BoxEditForm = ({ box }) => {
     document.getElementById("result").innerHTML = num1 * num2;
   };
 
+  const handleHours = (event) => {
+    console.log(event.target.value);
+  };
+
+  const handleTime = (e) => {};
+
   return (
     <div className={styles.content}>
       <p className={styles.title}>
@@ -136,7 +142,7 @@ const BoxEditForm = ({ box }) => {
           * 2021년 기준 최저시급은 8720원입니다.
         </p>
         <div className={styles.work__time}>
-          <select className={styles.hours}>
+          <select className={styles.hours} onChange={handleHours}>
             {hours.map((hour) => (
               <option value={hour.value}>{hour.label}</option>
             ))}
@@ -157,7 +163,9 @@ const BoxEditForm = ({ box }) => {
               <option value={minute.value}>{minute.label}</option>
             ))}
           </select>
-          <button className={styles.equal}>=</button>
+          <button className={styles.equal} onClick={handleTime}>
+            =
+          </button>
           <span className={styles.lump__sum} type="text"></span>
           <p>시간</p>
         </div>
