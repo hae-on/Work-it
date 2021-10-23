@@ -38,12 +38,17 @@ input::placeholder {
 }
 
 .calculation {
+  display: flex;
+}
+
+.calculation__box {
   display: inline-block;
   background-color: lightGrey;
   border-radius: 4px;
   width: 27em;
   height: 8em;
   margin-left: 1em;
+  margin-top: 1.2em;
 }
 
 .calculation__input {
@@ -107,6 +112,11 @@ input::placeholder {
   height: 2em;
   width: 3em;
   border-radius: 2px;
+  color: white;
+}
+
+.minutes {
+  padding-left: 0.4em;
 }
 
 .period {

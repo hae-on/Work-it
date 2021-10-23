@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./box_edit_form.module.css";
 import SelectColors from "components/colorBox/selectColors";
 
@@ -6,7 +6,7 @@ const BoxEditForm = ({ box }) => {
   const { id, title, date, worktime, sum, color } = box;
 
   const hours = [
-    { label: "시작 시간", value: "시작 시간" },
+    { label: "시간", value: "시간" },
     { label: "0", value: "0" },
     { label: "1", value: "1" },
     { label: "2", value: "2" },
@@ -35,7 +35,7 @@ const BoxEditForm = ({ box }) => {
   ];
 
   const minutes = [
-    { label: "시작 분", value: "시작 분" },
+    { label: "분", value: "분" },
     { label: "00", value: "00" },
     { label: "01", value: "01" },
     { label: "02", value: "02" },
@@ -150,69 +150,70 @@ const BoxEditForm = ({ box }) => {
           <input className={styles.date} value={date}></input>
         </span>
       </div>
-      <p className={styles.category}>계산:</p>
       <div className={styles.calculation}>
-        <div className={styles.calculation__input}>
-          <input
-            className={styles.hourly__wage}
-            placeholder="시급"
-            size="6"
-            maxlength="5"
-            id="number1"
-          ></input>
-          <p>원</p>
-          <p className={styles.multiplication}>*</p>
-          <input
-            className={styles.working__hours}
-            placeholder="일한 시간"
-            size="8"
-            maxlength="5"
-            id="number2"
-          ></input>
-          <p>시간</p>
-          <button className={styles.equal} onClick={onClick}>
-            =
-          </button>
-          <span className={styles.lump__sum} type="text" id="result">
-            {wages}
-          </span>
-          <p>원</p>
-        </div>
-        <p className={styles.explanation}>
-          * 2021년 기준 최저시급은 8720원입니다.
-        </p>
-        <div className={styles.work__time}>
-          <select className={styles.hours} onChange={handleStartHour}>
-            {hours.map((hour) => (
-              <option value={hour.value}>{hour.label}</option>
-            ))}
-          </select>
-          <select className={styles.minutes} onChange={handleStartMin}>
-            {minutes.map((minute) => (
-              <option value={minute.value}>{minute.label}</option>
-            ))}
-          </select>
-          <p className={styles.period}>~</p>
-          <select className={styles.hours} onChange={handleEndHour}>
-            {hours.map((hour) => (
-              <option value={hour.value}>{hour.label}</option>
-            ))}
-          </select>
-          <select className={styles.minutes} onChange={handleEndMin}>
-            {minutes.map((minute) => (
-              <option value={minute.value}>{minute.label}</option>
-            ))}
-          </select>
-          <button className={styles.equal} onClick={handleTime}>
-            =
-          </button>
-          <span className={styles.lump__sum} type="text">
-            {timeResult}
-          </span>
-          <p>시간</p>
+        <p className={styles.category}>계산:</p>
+        <div className={styles.calculation__box}>
+          <div className={styles.calculation__input}>
+            <input
+              className={styles.hourly__wage}
+              placeholder="시급"
+              size="6"
+              maxlength="5"
+              id="number1"
+            ></input>
+            <p>원</p>
+            <p className={styles.multiplication}>*</p>
+            <input
+              className={styles.working__hours}
+              placeholder="일한 시간"
+              size="8"
+              maxlength="5"
+              id="number2"
+            ></input>
+            <p>시간</p>
+            <button className={styles.equal} onClick={onClick}>
+              =
+            </button>
+            <span className={styles.lump__sum} type="text" id="result">
+              {wages}
+            </span>
+            <p>원</p>
+          </div>
+          <p className={styles.explanation}>
+            * 2021년 기준 최저시급은 8720원입니다.
+          </p>
+          <div className={styles.work__time}>
+            <select className={styles.hours} onChange={handleStartHour}>
+              {hours.map((hour) => (
+                <option value={hour.value}>{hour.label}</option>
+              ))}
+            </select>
+            <select className={styles.minutes} onChange={handleStartMin}>
+              {minutes.map((minute) => (
+                <option value={minute.value}>{minute.label}</option>
+              ))}
+            </select>
+            <p className={styles.period}>~</p>
+            <select className={styles.hours} onChange={handleEndHour}>
+              {hours.map((hour) => (
+                <option value={hour.value}>{hour.label}</option>
+              ))}
+            </select>
+            <select className={styles.minutes} onChange={handleEndMin}>
+              {minutes.map((minute) => (
+                <option value={minute.value}>{minute.label}</option>
+              ))}
+            </select>
+            <button className={styles.equal} onClick={handleTime}>
+              =
+            </button>
+            <span className={styles.lump__sum} type="text">
+              {timeResult}
+            </span>
+            <p>시간</p>
+          </div>
         </div>
       </div>
-
       <p className={styles.category}>
         총 시간:
         <input className={styles.worktime} value={worktime}></input>
