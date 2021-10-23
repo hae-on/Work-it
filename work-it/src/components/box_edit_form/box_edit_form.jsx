@@ -98,10 +98,12 @@ const BoxEditForm = ({ box }) => {
     { label: "59", value: "59" },
   ];
 
+  const [wages, setWages] = useState("");
+
   const onClick = () => {
     const num1 = document.getElementById("number1").value;
     const num2 = document.getElementById("number2").value;
-    document.getElementById("result").innerHTML = num1 * num2;
+    setWages(num1 * num2);
   };
 
   const [startHour, setStartHour] = useState("");
@@ -109,8 +111,6 @@ const BoxEditForm = ({ box }) => {
   const [endHour, setEndHour] = useState("");
   const [endMin, setEndMin] = useState("");
   const [timeResult, setTimeResult] = useState("");
-
-  const timeSpan = useRef();
 
   const handleStartHour = (event) => {
     setStartHour(event.target.value);
@@ -132,7 +132,6 @@ const BoxEditForm = ({ box }) => {
     const startTime = Number(startHour) + Number((startMin / 60).toFixed(2));
     const endTime = Number(endHour) + Number((endMin / 60).toFixed(2));
     setTimeResult(endTime - startTime);
-    // timeSpan.innerHTML = endTime - startTime;
   };
 
   return (
@@ -175,7 +174,7 @@ const BoxEditForm = ({ box }) => {
             =
           </button>
           <span className={styles.lump__sum} type="text" id="result">
-            {}
+            {wages}
           </span>
           <p>원</p>
         </div>
@@ -207,7 +206,7 @@ const BoxEditForm = ({ box }) => {
           <button className={styles.equal} onClick={handleTime}>
             =
           </button>
-          <span className={styles.lump__sum} type="text" ref={timeSpan}>
+          <span className={styles.lump__sum} type="text">
             {timeResult}
           </span>
           <p>시간</p>
