@@ -23,11 +23,17 @@ const Home = () => {
       sum: "200,000원",
     },
   ]);
+
+  const addBox = (box) => {
+    const updated = [...boxes, box];
+    setBoxes(updated);
+  };
+
   return (
     <section className={styles.home}>
       <Nav />
       <div className={styles.container}>
-        <Editor boxes={boxes} />
+        <Editor boxes={boxes} addBox={addBox} />
         <ColorBox boxes={boxes} />
       </div>
     </section>
