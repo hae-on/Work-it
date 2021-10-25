@@ -1,7 +1,8 @@
 .colorbox {
-  flex-basis: 50%;
-  margin-left: 2em;
+  flex-basis: 55%;
+  margin-left: 57%;
   margin-top: 1em;
+  position: fixed;
 }
 
 .box1,
@@ -13,4 +14,10 @@
   width: 100px;
   height: 100px;
   margin-bottom: 2em;
+}
+
+@media screen and (max-width: 1100px) {
+  .colorbox {
+    margin-left: 600px;
+  }
 }

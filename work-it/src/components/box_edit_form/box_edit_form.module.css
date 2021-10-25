@@ -20,7 +20,9 @@ input::placeholder {
 }
 
 .title__input,
-.date {
+.date,
+.worktime,
+.sum {
   border-radius: 4px;
   width: 10em;
   height: 2em;
@@ -29,7 +31,9 @@ input::placeholder {
 }
 
 .title__input:focus,
-.date:hover {
+.date:focus,
+.worktime:focus,
+.sum:focus {
   border: 1px solid keyColor;
 }
 

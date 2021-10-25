@@ -6,7 +6,7 @@ input {
 }
 
 .editor {
-  flex-basis: 60%;
+  flex-basis: 55%;
   border-right: 5px solid lightGrey;
 }
 
