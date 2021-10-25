@@ -8,6 +8,7 @@ input {
 .editor {
   flex-basis: 55%;
   border-right: 5px solid lightGrey;
+  margin-top: 6em;
 }
 
 .main__title {
