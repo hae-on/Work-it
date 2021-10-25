@@ -34,7 +34,11 @@ const Home = () => {
   };
 
   const deleteBox = (box) => {
-    console.log(box);
+    setBoxes((boxes) => {
+      const updated = { ...boxes };
+      delete updated[box.id];
+      return updated;
+    });
   };
 
   return (

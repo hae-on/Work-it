@@ -21,6 +21,10 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
     });
   };
 
+  const onsubmit = () => {
+    deleteBox(box);
+  };
+
   return (
     <form className={styles.content}>
       <p className={styles.title}>
@@ -73,8 +77,9 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
         </div>
       </div>
       <div className={styles.btn}>
-        <button className={styles.cancel}>취소</button>
-        <button className={styles.registration}>입력</button>
+        <button className={styles.registration} onClick={onsubmit}>
+          삭제
+        </button>
       </div>
     </form>
   );

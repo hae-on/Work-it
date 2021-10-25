@@ -5,7 +5,6 @@ import Box from "components/box/box";
 const ColorBox = ({ boxes }) => {
   return (
     <section className={styles.colorbox}>
-      {/* {boxes && boxes.map((box) => <Box box={box} key={box.id} />)} */}
       {Object.keys(boxes).map((key) => (
         <Box key={key} box={boxes[key]} />
       ))}
