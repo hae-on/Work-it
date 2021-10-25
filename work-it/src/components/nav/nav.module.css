@@ -1,9 +1,10 @@
 .container {
+  position: fixed;
+  display: flex;
   background: #f1f1f1;
   height: 80px;
   width: 100%;
   font-size: 1.2rem;
-  display: flex;
   justify-content: space-between;
 }
 

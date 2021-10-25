@@ -258,7 +258,6 @@ const BoxAddForm = ({ onAdd }) => {
         </div>
       </div>
       <div className={styles.btn}>
-        <button className={styles.cancel}>취소</button>
         <button className={styles.registration} onClick={onSubmit}>
           입력
         </button>
