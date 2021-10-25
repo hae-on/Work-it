@@ -158,7 +158,7 @@ const BoxAddForm = ({ onAdd }) => {
         <input
           ref={titleRef}
           className={styles.title__input}
-          placeholder="title"
+          placeholder="제목을 입력해주세요."
         ></input>
       </p>
       <div className={styles.calendar}>
@@ -167,7 +167,7 @@ const BoxAddForm = ({ onAdd }) => {
           <input
             ref={dateRef}
             className={styles.date}
-            placeholder="date"
+            placeholder="날짜를 입력해주세요."
           ></input>
         </span>
       </div>
@@ -240,12 +240,16 @@ const BoxAddForm = ({ onAdd }) => {
         <input
           ref={worktimeRef}
           className={styles.worktime}
-          placeholder="worktime"
+          placeholder="일한 시간을 입력해주세요."
         ></input>
       </p>
       <p className={styles.category}>
         총 금액:
-        <input ref={sumRef} className={styles.sum} placeholder="sum"></input>
+        <input
+          ref={sumRef}
+          className={styles.sum}
+          placeholder="총 금액을 입력해주세요."
+        ></input>
       </p>
       <div className={styles.colors}>
         <p className={styles.category}>색상:</p>
