@@ -3,6 +3,8 @@
   margin-left: 57%;
   margin-top: 1em;
   position: fixed;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .box1,
