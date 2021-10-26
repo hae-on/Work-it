@@ -20,16 +20,20 @@ input::placeholder {
 }
 
 .title__input,
-.date {
+.date,
+.worktime,
+.sum {
   border-radius: 4px;
-  width: 10em;
+  width: 11em;
   height: 2em;
   padding-left: 0.5em;
   margin-left: 0.4em;
 }
 
 .title__input:focus,
-.date:hover {
+.date:focus,
+.worktime:focus,
+.sum:focus {
   border: 1px solid keyColor;
 }
 
@@ -133,8 +137,10 @@ input::placeholder {
 }
 
 .color__box {
-  margin-top: 1em;
+  font-size: 1.1rem;
   margin-left: 1em;
+  margin-top: 0.7em;
+  height: 2em;
 }
 
 .btn {

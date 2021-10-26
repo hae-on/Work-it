@@ -157,12 +157,14 @@ const BoxAddForm = ({ onAdd }) => {
   return (
     <form ref={formRef} className={styles.content}>
       <p className={styles.title}>
-        <span className={styles.category}>제목: </span>
-        <input
-          ref={titleRef}
-          className={styles.title__input}
-          placeholder="제목을 입력해주세요."
-        ></input>
+        <p className={styles.category}>
+          제목:
+          <input
+            ref={titleRef}
+            className={styles.title__input}
+            placeholder="제목을 입력해주세요."
+          ></input>
+        </p>
       </p>
       <div className={styles.calendar}>
         <span className={styles.category}>
@@ -254,8 +256,8 @@ const BoxAddForm = ({ onAdd }) => {
           placeholder="총 금액을 입력해주세요."
         ></input>
       </p>
-      <div className={styles.colors}>
-        <p className={styles.category}>색상:</p>
+      <p className={styles.category}>
+        색상:
         <select ref={colorRef} className={styles.color__box} name="color">
           <option value="red">red</option>
           <option value="orange">orange</option>
@@ -265,7 +267,7 @@ const BoxAddForm = ({ onAdd }) => {
           <option value="purple">purple</option>
           <option value="pink">pink</option>
         </select>
-      </div>
+      </p>
       <div className={styles.btn}>
         <button className={styles.registration} onClick={onSubmit}>
           입력

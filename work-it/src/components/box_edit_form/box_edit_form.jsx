@@ -29,15 +29,17 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
   return (
     <form className={styles.content}>
       <p className={styles.title}>
-        <span className={styles.category}>제목: </span>
-        <input
-          ref={titleRef}
-          name="title"
-          className={styles.title__input}
-          placeholder="제목을 입력해주세요."
-          value={title}
-          onChange={onChange}
-        ></input>
+        <p className={styles.category}>
+          제목:
+          <input
+            ref={titleRef}
+            name="title"
+            className={styles.title__input}
+            placeholder="제목을 입력해주세요."
+            value={title}
+            onChange={onChange}
+          ></input>
+        </p>
       </p>
       <div className={styles.calendar}>
         <span className={styles.category}>
@@ -71,8 +73,9 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
           onChange={onChange}
         ></input>
       </p>
-      <div className={styles.colors}>
-        <p className={styles.category}>색상:</p>
+
+      <p className={styles.category}>
+        색상:
         <select
           ref={colorRef}
           className={styles.color__box}
@@ -88,7 +91,8 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
           <option value="purple">purple</option>
           <option value="pink">pink</option>
         </select>
-      </div>
+      </p>
+
       <div className={styles.btn}>
         <button className={styles.registration} onClick={onsubmit}>
           삭제
