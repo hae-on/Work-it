@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import styles from "./box_add_form.module.css";
-import SelectColors from "components/colorBox/selectColors";
 
 const BoxAddForm = ({ onAdd }) => {
   const hours = [
@@ -132,6 +131,7 @@ const BoxAddForm = ({ onAdd }) => {
   const dateRef = useRef("");
   const worktimeRef = useRef("");
   const sumRef = useRef("");
+  const colorRef = useRef("");
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -141,6 +141,7 @@ const BoxAddForm = ({ onAdd }) => {
       date: dateRef.current.value || "",
       worktime: worktimeRef.current.value || "",
       sum: sumRef.current.value || "",
+      color: colorRef.current.value || "",
     };
     formRef.current.reset();
     onAdd(box);
@@ -255,9 +256,15 @@ const BoxAddForm = ({ onAdd }) => {
       </p>
       <div className={styles.colors}>
         <p className={styles.category}>색상:</p>
-        <div className={styles.color__box} placeholder="color">
-          <SelectColors />
-        </div>
+        <select ref={colorRef} className={styles.color__box} name="color">
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="purple">purple</option>
+          <option value="pink">pink</option>
+        </select>
       </div>
       <div className={styles.btn}>
         <button className={styles.registration} onClick={onSubmit}>
