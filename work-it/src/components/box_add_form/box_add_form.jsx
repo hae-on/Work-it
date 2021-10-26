@@ -98,10 +98,11 @@ const BoxAddForm = ({ onAdd }) => {
 
   const [wages, setWages] = useState("");
 
-  const onClick = () => {
+  const onClick = (event) => {
     const num1 = document.getElementById("number1").value;
     const num2 = document.getElementById("number2").value;
     setWages(num1 * num2);
+    event.preventDefault();
   };
 
   const [startHour, setStartHour] = useState("");
@@ -145,10 +146,11 @@ const BoxAddForm = ({ onAdd }) => {
     onAdd(box);
   };
 
-  const handleTime = (e) => {
+  const handleTime = (event) => {
     const startTime = Number(startHour) + Number((startMin / 60).toFixed(2));
     const endTime = Number(endHour) + Number((endMin / 60).toFixed(2));
     setTimeResult(endTime - startTime);
+    event.preventDefault();
   };
 
   return (

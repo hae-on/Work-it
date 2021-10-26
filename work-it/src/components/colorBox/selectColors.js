@@ -1,14 +1,24 @@
 import React from "react";
 import { ColorConsumer } from "./colorContext";
 
+// const colors = [
+//   "#FF98A5",
+//   "#FFDCB0",
+//   "#FEFF84",
+//   "#B9FFBD",
+//   "#ACE8FF",
+//   "#D4B4FF",
+//   "#FFD1D5",
+// ];
+
 const colors = [
-  "#FF98A5",
-  "#FFDCB0",
-  "#FEFF84",
-  "#B9FFBD",
-  "#ACE8FF",
-  "#D4B4FF",
-  "#FFD1D5",
+  { red: "#FF98A5" },
+  { orange: "#FFDCB0" },
+  { yellow: "#FEFF84" },
+  { green: "#B9FFBD" },
+  { blue: "#ACE8FF" },
+  { purple: "#D4B4FF" },
+  { pink: "#FFD1D5" },
 ];
 
 const SelectColors = () => {

@@ -12,3 +12,31 @@
   text-align: center;
   padding-top: 0.1em;
 }
+
+.box.red {
+  background-color: #ff98a5;
+}
+
+.box.orange {
+  background-color: #ffdcb0;
+}
+
+.box.yellow {
+  background-color: #fff88d;
+}
+
+.box.green {
+  background-color: #b9ffbd;
+}
+
+.box.blue {
+  background-color: #ace8ff;
+}
+
+.box.purple {
+  background-color: #d4b4ff;
+}
+
+.box.pink {
+  background-color: #ffd1d5;
+}

@@ -1,4 +1,4 @@
-@value keyColor, lightGrey, hoverKeyColor, hoverCancelColor from "../../common/color.css";
+@value lightGrey from "../../common/color.css";
 
 input {
   font-size: 1.1rem;

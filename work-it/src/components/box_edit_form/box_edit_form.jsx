@@ -9,6 +9,7 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
   const dateRef = useRef("");
   const worktimeRef = useRef("");
   const sumRef = useRef("");
+  const colorRef = useRef("");
 
   const onChange = (event) => {
     if (event.currentTarget == null) {
@@ -72,9 +73,21 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
       </p>
       <div className={styles.colors}>
         <p className={styles.category}>색상:</p>
-        <div className={styles.color__box} value={color}>
-          <SelectColors />
-        </div>
+        <select
+          ref={colorRef}
+          className={styles.color__box}
+          name="color"
+          value={color}
+          onChange={onChange}
+        >
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="purple">purple</option>
+          <option value="pink">pink</option>
+        </select>
       </div>
       <div className={styles.btn}>
         <button className={styles.registration} onClick={onsubmit}>
