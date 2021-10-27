@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import styles from "./box_edit_form.module.css";
-import SelectColors from "components/colorBox/selectColors";
 
 const BoxEditForm = ({ box, updateBox, deleteBox }) => {
-  const { id, title, date, worktime, sum, color } = box;
+  const { title, date, worktime, sum, color } = box;
 
   const titleRef = useRef("");
   const dateRef = useRef("");
@@ -73,7 +72,6 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
           onChange={onChange}
         ></input>
       </p>
-
       <p className={styles.category}>
         색상:
         <select

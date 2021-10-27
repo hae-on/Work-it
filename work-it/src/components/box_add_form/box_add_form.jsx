@@ -150,7 +150,7 @@ const BoxAddForm = ({ onAdd }) => {
   const handleTime = (event) => {
     const startTime = Number(startHour) + Number((startMin / 60).toFixed(2));
     const endTime = Number(endHour) + Number((endMin / 60).toFixed(2));
-    setTimeResult(endTime - startTime);
+    setTimeResult((endTime - startTime).toFixed(3));
     event.preventDefault();
   };
 

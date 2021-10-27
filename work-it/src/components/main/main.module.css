@@ -1,7 +1,6 @@
 @value keyColor, darkGrey from "../../common/color.css";
 
 .main {
-  margin-top: 29em;
   text-align: center;
 }
 
@@ -12,5 +11,13 @@
   width: 20em;
   height: 2em;
   border-radius: 6px;
-  margin-top: 10px;
+}
+
+.logo {
+  width: 550px;
+  height: 300px;
+}
+
+.intro {
+  margin-top: 4em;
 }
