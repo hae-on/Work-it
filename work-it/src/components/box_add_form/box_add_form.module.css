@@ -37,8 +37,8 @@ input::placeholder {
   border: 1px solid keyColor;
 }
 
-.calendar {
-  display: flex;
+.period {
+  margin-left: 0.7em;
 }
 
 .calculation {
@@ -127,7 +127,7 @@ input::placeholder {
   padding-left: 0.4em;
 }
 
-.period {
+.time__period {
   margin-left: 0.8em;
   margin-right: 1em;
 }
@@ -136,10 +136,9 @@ input::placeholder {
   display: flex;
 }
 
-.color__box {
+.select__box {
   font-size: 1.1rem;
   margin-left: 1em;
-  margin-top: 0.7em;
   height: 2em;
 }
 

@@ -42,11 +42,10 @@ input::placeholder {
 }
 
 .period {
-  margin-left: 0.8em;
-  margin-right: 1em;
+  margin-left: 0.7em;
 }
 
-.color__box {
+.select__box {
   font-size: 1.1rem;
   margin-left: 1em;
   height: 2em;

@@ -61,6 +61,7 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
         <span className={styles.category}>
           날짜:
           <select
+            className={styles.select__box}
             ref={startDateRef}
             name="startDate"
             value={startDate}
@@ -70,8 +71,9 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
               <option value={month.value}>{month.label}</option>
             ))}
           </select>
-          <span>~</span>
+          <span className={styles.period}> ~</span>
           <select
+            className={styles.select__box}
             ref={endDateRef}
             name="endDate"
             value={endDate}
@@ -107,7 +109,7 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
         색상:
         <select
           ref={colorRef}
-          className={styles.color__box}
+          className={styles.select__box}
           name="color"
           value={color}
           onChange={onChange}

@@ -95,6 +95,21 @@ const BoxAddForm = ({ onAdd }) => {
     { label: "59", value: "59" },
   ];
 
+  const months = [
+    { label: "1월", value: "1월" },
+    { label: "2월", value: "2월" },
+    { label: "3월", value: "3월" },
+    { label: "4월", value: "4월" },
+    { label: "5월", value: "5월" },
+    { label: "6월", value: "6월" },
+    { label: "7월", value: "7월" },
+    { label: "8월", value: "8월" },
+    { label: "9월", value: "9월" },
+    { label: "10월", value: "10월" },
+    { label: "11월", value: "11월" },
+    { label: "12월", value: "12월" },
+  ];
+
   const [wages, setWages] = useState("");
 
   const onClick = (event) => {
@@ -128,7 +143,8 @@ const BoxAddForm = ({ onAdd }) => {
 
   const formRef = useRef("");
   const titleRef = useRef("");
-  const dateRef = useRef("");
+  const startDateRef = useRef("");
+  const endDateRef = useRef("");
   const worktimeRef = useRef("");
   const sumRef = useRef("");
   const colorRef = useRef("");
@@ -138,7 +154,8 @@ const BoxAddForm = ({ onAdd }) => {
     const box = {
       id: Date.now(),
       title: titleRef.current.value || "",
-      date: dateRef.current.value || "",
+      startDate: startDateRef.current.value || "",
+      endDate: endDateRef.current.value || "",
       worktime: worktimeRef.current.value || "",
       sum: sumRef.current.value || "",
       color: colorRef.current.value || "",
@@ -169,11 +186,25 @@ const BoxAddForm = ({ onAdd }) => {
       <div className={styles.calendar}>
         <span className={styles.category}>
           날짜:
-          <input
-            ref={dateRef}
-            className={styles.date}
-            placeholder="날짜를 입력해주세요."
-          ></input>
+          <select
+            className={styles.select__box}
+            ref={startDateRef}
+            name="startDate"
+          >
+            {months.map((month) => (
+              <option value={month.value}>{month.label}</option>
+            ))}
+          </select>
+          <span className={styles.period}> ~</span>
+          <select
+            className={styles.select__box}
+            ref={endDateRef}
+            name="endDate"
+          >
+            {months.map((month) => (
+              <option value={month.value}>{month.label}</option>
+            ))}
+          </select>
         </span>
       </div>
       <div className={styles.calculation}>
@@ -219,7 +250,7 @@ const BoxAddForm = ({ onAdd }) => {
                 <option value={minute.value}>{minute.label}</option>
               ))}
             </select>
-            <p className={styles.period}>~</p>
+            <p className={styles.time__period}>~</p>
             <select className={styles.hours} onChange={handleEndHour}>
               {hours.map((hour) => (
                 <option value={hour.value}>{hour.label}</option>
@@ -258,7 +289,7 @@ const BoxAddForm = ({ onAdd }) => {
       </p>
       <p className={styles.category}>
         색상:
-        <select ref={colorRef} className={styles.color__box} name="color">
+        <select ref={colorRef} className={styles.select__box} name="color">
           <option value="red">red</option>
           <option value="orange">orange</option>
           <option value="yellow">yellow</option>

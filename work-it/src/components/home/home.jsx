@@ -9,8 +9,8 @@ const Home = () => {
     1: {
       id: "1",
       title: "파리바게트",
-      startdate: "10",
-      enddate: "11",
+      startDate: "10월",
+      endDate: "11월",
       color: "red",
       worktime: "155",
       sum: "400,000",
@@ -18,8 +18,8 @@ const Home = () => {
     2: {
       id: "2",
       title: "한솥도시락",
-      startdate: "2",
-      enddate: "4",
+      startDate: "2월",
+      endDate: "4월",
       color: "blue",
       worktime: "130",
       sum: "200,000",

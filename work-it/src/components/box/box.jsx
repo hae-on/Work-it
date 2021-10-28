@@ -9,7 +9,7 @@ const Box = ({ box }) => {
       <li className={styles.info}>
         <h1>{title}</h1>
         <p>
-          {startDate}~{endDate}
+          {startDate} ~ {endDate}
         </p>
         <p>{worktime}시간</p>
         <h1>{sum}원</h1>
