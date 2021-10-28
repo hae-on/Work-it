@@ -1,11 +1,28 @@
 import React, { useRef } from "react";
 import styles from "./box_edit_form.module.css";
+import DatePicker from "react-datepicker";
 
 const BoxEditForm = ({ box, updateBox, deleteBox }) => {
-  const { title, date, worktime, sum, color } = box;
+  const { title, startDate, endDate, worktime, sum, color } = box;
+
+  const months = [
+    { label: "1월", value: "1월" },
+    { label: "2월", value: "2월" },
+    { label: "3월", value: "3월" },
+    { label: "4월", value: "4월" },
+    { label: "5월", value: "5월" },
+    { label: "6월", value: "6월" },
+    { label: "7월", value: "7월" },
+    { label: "8월", value: "8월" },
+    { label: "9월", value: "9월" },
+    { label: "10월", value: "10월" },
+    { label: "11월", value: "11월" },
+    { label: "12월", value: "12월" },
+  ];
 
   const titleRef = useRef("");
-  const dateRef = useRef("");
+  const startDateRef = useRef("");
+  const endDateRef = useRef("");
   const worktimeRef = useRef("");
   const sumRef = useRef("");
   const colorRef = useRef("");
@@ -43,13 +60,27 @@ const BoxEditForm = ({ box, updateBox, deleteBox }) => {
       <div className={styles.calendar}>
         <span className={styles.category}>
           날짜:
-          <input
-            ref={dateRef}
-            name="date"
-            className={styles.date}
-            value={date}
+          <select
+            ref={startDateRef}
+            name="startDate"
+            value={startDate}
             onChange={onChange}
-          ></input>
+          >
+            {months.map((month) => (
+              <option value={month.value}>{month.label}</option>
+            ))}
+          </select>
+          <span>~</span>
+          <select
+            ref={endDateRef}
+            name="endDate"
+            value={endDate}
+            onChange={onChange}
+          >
+            {months.map((month) => (
+              <option value={month.value}>{month.label}</option>
+            ))}
+          </select>
         </span>
       </div>
       <p className={styles.category}>

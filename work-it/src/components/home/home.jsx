@@ -9,18 +9,20 @@ const Home = () => {
     1: {
       id: "1",
       title: "파리바게트",
-      date: "2021-10-15",
+      startdate: "10",
+      enddate: "11",
       color: "red",
-      worktime: "155시간",
-      sum: "400,000원",
+      worktime: "155",
+      sum: "400,000",
     },
     2: {
       id: "2",
       title: "한솥도시락",
-      date: "2021-11-15",
+      startdate: "2",
+      enddate: "4",
       color: "blue",
-      worktime: "130시간",
-      sum: "200,000원",
+      worktime: "130",
+      sum: "200,000",
     },
   });
 
