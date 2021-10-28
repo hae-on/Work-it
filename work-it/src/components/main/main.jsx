@@ -11,15 +11,17 @@ const Main = (props) => {
 
   return (
     <div className={styles.main}>
-      <img src={logo} alt="logo" className={styles.logo} />
-      <div>
-        <p className={styles.intro}>
-          Work it-!에 오신 것을 환영해요! 아래 버튼을 눌러 시작해보세요 🎉
-        </p>
-        <div className={styles.btn}>
-          <button onClick={onClick} className={styles.start}>
-            시작하기
-          </button>
+      <div className={styles.container}>
+        <img src={logo} alt="logo" className={styles.logo} />
+        <div>
+          <p className={styles.intro}>
+            Work it-!에 오신 것을 환영해요! 아래 버튼을 눌러 시작해보세요 🎉
+          </p>
+          <div className={styles.btn}>
+            <button onClick={onClick} className={styles.start}>
+              시작하기
+            </button>
+          </div>
         </div>
       </div>
     </div>
